@@ -8,7 +8,8 @@ export class QRCodeGenerator implements ComponentFramework.StandardControl<IInpu
 	private props: IQRCodeGenrops = {
 		//tableValue: this.numberFacesChanged.bind(this),
 		buttonValue: "",
-		buttonLink: ""
+		buttonLink: "",
+		buttonTitle: ""
 	}
 
 	/**
@@ -40,6 +41,7 @@ export class QRCodeGenerator implements ComponentFramework.StandardControl<IInpu
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void {
 		this.props.buttonValue = context.parameters.buttonValue.raw!;
+		this.props.buttonTitle = context.parameters.buttonTitle.raw!;
 		this.props.buttonLink = (context.parameters.QRCodeLink.raw! === null) ? window.location.href : context.parameters.QRCodeLink.raw!;
 		ReactDOM.render(
 			React.createElement(

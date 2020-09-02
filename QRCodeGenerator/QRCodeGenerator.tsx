@@ -8,6 +8,7 @@ export interface IQRCodeGenrops {
   // These are set based on the toggles shown above the examples (not needed in real code)
   buttonValue: string;
   buttonLink: string;
+  buttonTitle: string;
 }
 
 const buttonStyles = { root: { marginRight: 8 } };
@@ -33,7 +34,7 @@ export const ButtonAnchor: React.FunctionComponent<IQRCodeGenrops> = props => {
   ));
   return (
     <div>
-      <PrimaryButton text={props.buttonValue} onClick={openPanel} />
+      <PrimaryButton text={props.buttonTitle} onClick={openPanel} />
       <Panel
         isOpen={isOpen}
         onDismiss={dismissPanel}
